@@ -9,10 +9,11 @@ import TaskListHeader from "../../components/TaskListHeader/TaskListHeader";
 import TaskList from "../../components/TaskList/TaskList";
 import SceneList from "../../components/SceneList/SceneList";
 import DevicePop from "../../components/DevicePop/DevicePop";
-import { manipulate, sendCmdGroup, sendTask } from "../../common/js/utils";
-import { AREA_MULTI_MACHINE, PLACE_ID, PLAN_ID } from "../../common/js/params";
+import { filterUselessScene, manipulate, sendCmdGroup } from "../../common/js/utils";
+import { AREA_MULTI_MACHINE, PLACE_ID, PLAN_ID, AREA_SCROLL_SCREEN_ID } from "../../common/js/params";
 import CmdIcon from "../../components/CmdIcon/CmdIcon";
 import CmdGroupPop from "../../components/CmdGroupPop/CmdGroupPop";
+import ScrollScreenWrap from "../../components/ScrollScreenWrap/ScrollScreenWrap";
 
 let areaId: number = 0;
 let areaName: string = '';
@@ -59,6 +60,7 @@ export default class AreaPage extends Component<AreaProps, AreaState> {
         this.setState({
             areaName
         }, () => {
+            if (areaId === AREA_SCROLL_SCREEN_ID) return;
             if (AREA_MULTI_MACHINE.indexOf(areaId) < 0) {
                 // this.getTask();
                 this.getScene();
@@ -74,7 +76,7 @@ export default class AreaPage extends Component<AreaProps, AreaState> {
         };
         AreaPage.dataStore.fetchNetData('/api/scene/list', postData)
             .then((data: any) => {
-                let scenes = data.scenes;
+                let scenes = filterUselessScene(data.scenes);
                 this.setState({
                     scenesList: scenes,
                     currentSceneId: scenes.length > 0 ? scenes[0].id : 0,
@@ -261,12 +263,16 @@ export default class AreaPage extends Component<AreaProps, AreaState> {
                             }
                         </View>
                         <View style={styles.manipWrap}>
-                            <ManipWrap
-                                areaId={areaId}
-                                taskId={this.state.currentTaskId}
-                                isList={isMultiMachine ? true : false}
-                                openListPop={this.showDevicePop}
-                            />
+                            {
+                                areaId === AREA_SCROLL_SCREEN_ID ?
+                                <ScrollScreenWrap /> :
+                                <ManipWrap
+                                    areaId={areaId}
+                                    taskId={this.state.currentTaskId}
+                                    isList={isMultiMachine ? true : false}
+                                    openListPop={this.showDevicePop}
+                                />
+                            }
                         </View>
                     </View>
                 </View>
@@ -276,16 +282,6 @@ export default class AreaPage extends Component<AreaProps, AreaState> {
                     deviceList={this.state.deviceList}
                     getScene={this.getScene}
                 />
-                {/*当前展区下的所有任务弹窗*/}
-                {/*
-                <CmdGroupPop
-                    visible={this.state.isAreaTaskPop}
-                    cbCancel={this.hideAreaTaskPop}
-                    headerText='请选择一个任务：'
-                    groupList={this.state.areaTaskList}
-                    handleClick={sendTask}
-                />
-                */}
                 {/*指令组弹窗*/}
                 <CmdGroupPop
                     visible={this.state.isCmdGroupPop}

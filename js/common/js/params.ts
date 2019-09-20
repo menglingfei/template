@@ -61,132 +61,133 @@ export const AREA_MULTI_MACHINE = [];
 // 设备全开，全关指令ID
 export const DEVICE_ALL_ID = {
     // TODO
-    ON: -1,
-    OFF: -2
+    ON: 483,
+    OFF: 484
 };
+export const USELESS_SCENE_ID = [1251, 1214];
 export const AREA_LIST: Array<any> = [
     {
         id: 91,
-        name: '中国综合管廊发展区',
-        x: 290,
-        y: 10,
-        width: 130,
-        height: 22
+        name: '发展进程',
+        x: 320,
+        y: 6,
+        width: 85,
+        height: 35
     },
     {
         id: 88,
         name: '主题宣传片',
-        x: 155,
-        y: 337,
+        x: 164,
+        y: 330,
         width: 85,
-        height: 22
+        height: 35
     },
     {
         id: 90,
-        name: '国家战略布局',
-        x: 245,
-        y: 61,
+        name: '建设世界名城',
+        x: 255,
+        y: 55,
         width: 90,
-        height: 22
+        height: 35
     },
     {
         id: 92,
-        name: '杭州市综合管廊规划',
+        name: '管廊规划',
         x: 430,
-        y: 215,
-        width: 135,
-        height: 22
+        y: 210,
+        width: 80,
+        height: 35
     },
     {
         id: 94,
-        name: '杭州综合管廊发展历程',
+        name: '管廊未来',
         x: 400,
-        y: 42,
-        width: 154,
-        height: 22
+        y: 35,
+        width: 90,
+        height: 35
     },
     {
         id: 95,
-        name: '杭州综合管廊科普',
-        x: 520,
-        y: 437,
-        width: 130,
-        height: 22
+        name: '管廊科普',
+        x: 525,
+        y: 432,
+        width: 85,
+        height: 35
     },
     {
         id: 93,
-        name: '杭州综合管廊项目',
-        x: 475,
-        y: 182,
-        width: 135,
-        height: 22
+        name: '管廊特色',
+        x: 480,
+        y: 175,
+        width: 80,
+        height: 35
     },
     {
         id: 100,
         name: '签名墙',
-        x: 385,
-        y: 559,
-        width: 60,
-        height: 22
+        x: 390,
+        y: 555,
+        width: 63,
+        height: 35
     },
     {
         id: 99,
-        name: '管廊六大体系',
-        x: 405,
-        y: 250,
-        width: 130,
-        height: 22
+        name: '管廊附属设施',
+        x: 410,
+        y: 246,
+        width: 110,
+        height: 35
     },
     {
         id: 98,
-        name: '综合管廊建设工艺',
-        x: 440,
-        y: 520,
-        width: 130,
-        height: 22
+        name: '建设工艺',
+        x: 445,
+        y: 513,
+        width: 85,
+        height: 35
     },
     {
         id: 96,
-        name: '综合管廊知识问答',
-        x: 510,
-        y: 285,
-        width: 130,
-        height: 22
+        name: '知识问答',
+        x: 515,
+        y: 280,
+        width: 85,
+        height: 35
     },
     {
         id: 101,
-        name: '综合管廊管理',
-        x: 300,
-        y: 524,
-        width: 100,
-        height: 22
+        name: '运维管理',
+        x: 305,
+        y: 520,
+        width: 85,
+        height: 35
     },
     {
         id: 102,
-        name: '美丽杭州蓝图',
-        x: 215,
-        y: 563,
-        width: 100,
-        height: 22
+        name: '美丽蓝图',
+        x: 220,
+        y: 554,
+        width: 85,
+        height: 35
     },
     {
         id: 97,
-        name: '透视地面',
-        x: 485,
-        y: 478,
-        width: 70,
-        height: 22
+        name: '管廊之最',
+        x: 490,
+        y: 470,
+        width: 78,
+        height: 35
     },
     {
         id: 89,
-        name: '领导关怀区',
-        x: 185,
-        y: 30,
-        width: 70,
-        height: 22
+        name: '前言',
+        x: 197,
+        y: 25,
+        width: 55,
+        height: 35
     },
 ];
-
+export const AREA_SCROLL_SCREEN_ID = 99;
 /************************* Common ************************/
 export const DEST = "16_05541352";
 // 中控服务ID

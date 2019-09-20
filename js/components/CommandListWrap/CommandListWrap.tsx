@@ -4,7 +4,6 @@ import {
     StyleSheet,
     View,
     ScrollView,
-    Text
 } from 'react-native';
 import DataStore from "../../common/js/DataStorage";
 import BgButton from "../BgButton/BgButton";
@@ -29,7 +28,6 @@ export default class CommandListWrap extends Component<AreaProps, AreaStates> {
                             id={item.id}
                             title={item.device_model_function_name}
                             selected={false}
-                            handlePress={() => {alert(1)}}
                         />
                     </View>
                 );

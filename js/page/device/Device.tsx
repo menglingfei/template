@@ -101,20 +101,6 @@ export default class DevicePage extends Component<DeviceProps, DeviceStates> {
                 error && console.log(error.toString());
             })
     }
-    /*
-    getCmdGroup = () => {
-        debugger;
-        DevicePage.dataStore.fetchNetData('/api/place/info', {
-            place_id: PLACE_ID,
-        })
-            .then((data: any) => {
-                debugger;
-            })
-            .catch((error: any) => {
-                error && console.log(error.toString());
-            })
-    }
-    */
     hideCmdGroupPop = () => {
         this.setState({
             isCmdGroupPop: false

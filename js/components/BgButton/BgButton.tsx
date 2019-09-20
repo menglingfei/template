@@ -12,8 +12,6 @@ interface ButtonProps {
 export default class BgButton extends Component<ButtonProps> {
     constructor(props: any) {
         super(props);
-        this.state = {
-        };
     }
     public static dataStore:any = new DataStore();
     sendCmd = (id: number): void => {
@@ -22,7 +20,7 @@ export default class BgButton extends Component<ButtonProps> {
             device_id: id
         })
             .then((data: any) => {
-                // TODO
+                // console.log(JSON.stringify(data));
             })
             .catch((error: any) => {
                 error && console.log(error.toString());

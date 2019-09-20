@@ -1,10 +1,12 @@
-import {ToastAndroid} from "react-native";
+import { ToastAndroid } from "react-native";
 import DataStore from "../../common/js/DataStorage";
+import {USELESS_SCENE_ID} from "./params";
+
 
 /**
  * 在设备列表中过滤灯控和非灯控
- * data {array} 设备列表数据
- * isLight {boolean} 是否获取灯光
+ * @param {Array} data 设备列表数据
+ * @param {Boolean} isLight  是否获取灯光
  */
 export function getSpecialDevice(data: any, isLight: boolean = false) {
     if (!isLight) {
@@ -80,4 +82,13 @@ export function sendCmdGroup(id: number) {
         .catch((error: any) => {
             error && console.log(error.toString());
         })
+}
+
+/**
+ * filter scenes which are uesless. It always happens when there exists interactions between big screen and standing computer
+ * @method filterUselessScene
+ * @param {Array} scenesArray
+ */
+export function filterUselessScene(scenesArray: Array<any>) {
+    return scenesArray.filter((item: any) => USELESS_SCENE_ID.indexOf(item.id) < 0);
 }

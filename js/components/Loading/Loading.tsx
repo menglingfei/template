@@ -42,7 +42,7 @@ export const Loading = {
 const styles = StyleSheet.create({
         maskStyle: {
             position: 'absolute',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
             width: "100%",
             height: "100%",
             alignItems: 'center',
